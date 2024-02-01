@@ -6,14 +6,7 @@ pipeline {
     dockerContainerName = 'bookapi'
     dockerImageName = 'bookapi-api'
   }
-  stages {
-    stage('Build') {
-       steps {
-	withMaven(maven: 'MAVEN_ENV') {
-            sh "mvn ${MAVEN_ARGS}"
-        }
-       }
-    }
+
 	  
  stage('clean container') {
       steps {
